@@ -1,0 +1,8 @@
+{
+  "ret": true,
+  "body": {
+    "username": "admin",
+    "userpwd": "admin"
+  },
+  "msg": "用户信息验证成功！"
+}
