@@ -15,10 +15,9 @@ import echarts from "@/components/echarts"
 import element from "@/components/element"
 import element_comp from "@/components/element_comp"
 /**
- * 怪自己太粗心,就说为什么一直报这个错:原因是路径引用时,@后面忘记加/了,导致被认为是一个模块,跑去node_module中去找,找不到则提示安装.
- * This dependency was not found:
-To install it, you can run: npm install --save @components/echarts
-*/
+ * This dependency was not found: To install it, you can run: npm install --save @components/echarts.
+ * 解决: 路径引入时，@后缺少/,导致被认为是模块,在node_modules找不到,提示安装.
+ */
 import ueditor_using from "@/components/ueditor_using"
 const routesArr = [{
   path: '/login',

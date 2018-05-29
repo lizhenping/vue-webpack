@@ -55,10 +55,9 @@ export default {
             username: username,
             password: password
           };
-
-          //axios模拟数据,先注释,后台还没开呢~
           /**
-           * 这里需要注意的是:采取post请求时,若传递的是obj对象,实际的参数在network中,是以requestPayload.
+           * axios模拟数据
+           * 采取post请求时,若传递的是obj对象,实际的参数在network中,是以requestPayload.
            */
           // this.$http.get("../../static/data/login.json").then(
           //   response => {

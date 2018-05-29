@@ -11,13 +11,7 @@
 export default {
   data() {
     return {
-      tableData: [
-        {
-          date: "2018-5-23",
-          sayings: "开始之日",
-          func: "vue-cli脚手架搭建,登录/登出"
-        }
-      ]
+      tableData: []
     };
   }
 };

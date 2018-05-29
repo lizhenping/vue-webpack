@@ -23,10 +23,6 @@ const cart = {
       commit("ADD_CART", list)
     }
   },
-  /**页面报错: Cannot read property 'cart' of undefined： 原因是参数传递有误，第一个参数应该是state，而不是cartList;
-   * 同时发现还有地方又有问题: mutations,容易写成单数[mutation];
-   * 同时排除了上述所有问题之后,仍还是不行，突然临门一脚哦，貌似没有挂在到app实例钩子上去
-   */
   getters: {
     cartList: state => state.cartList,
     productList: state => state.productList

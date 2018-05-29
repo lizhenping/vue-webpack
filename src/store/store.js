@@ -1,25 +1,3 @@
-// import Vue from "vue";
-// import Vuex from "vuex";
-// Vue.use(Vuex);
-
-// import cart from "./shoppingCart"
-
-// /**
-//  *报错信息: __WEBPACK_IMPORTED_MODULE_1_vuex__.a.store is not a function
-//  忘记加new 这个关键字了,同时哈,store必须是首字母大写===
-//  经常死在这些细节问题上,撞头去吧~~~
-//  */
-// export default new Vuex.Store({
-//   namespace: true,
-//   state: {},
-//   getters: {},
-//   mutations: {},
-//   actions: {},
-//   modules: {
-//     cart
-//   }
-// });
-
 function findIndexbyID(arr, id) {
   var length = arr.length;
   for (var i = 0; i < length; i++) {
@@ -186,7 +164,9 @@ const getters = {
   currentActive: state => state.currentActive
 
 }
-
+/** 
+ * store必须挂载到app的实例上
+ */
 export default new Vuex.Store({
   state,
   mutations,
