@@ -1,11 +1,3 @@
-    /*
-     *setItem:保存到本地储存或cookie  参数：key => 键名  val => 键值  exp => 过期时间（默认24小时），单位为小时
-     *getItem:获取本地储存或cookie  参数：key => 键名
-     *removeItem:清除某一项本地储存或cookie  参数：key => 键名
-     *clearAll:清除所有本地储存或cookie
-     *getAll:获取所有本地储存或cookie => {key1: val1, key2: val2}
-     *注意：setItem 和 getItem 的参数已经进行了JSON格式和对象格式的转换，使用时无需再转换！！！
-     */
     function supportLocalStorage() {
       try { //看是否支持localStorage
         localStorage.setItem("vue", 1);
