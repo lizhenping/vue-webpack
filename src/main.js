@@ -13,12 +13,14 @@ Vue.use(ElementUI)
  * 3)$[jquery]全局可用,必须全局安装-g
  */
 import storage from "@/service/storageService"
-import axios from "axios";
+import axios from "axios"
 import jquery from "jquery"
+import configService from "@/service/configService"
+
 global.$ = global.jQuery = jquery;
 Vue.prototype.$storage = storage;
 Vue.prototype.$http = axios;
-Vue.prototype.$ = jquery;
+Vue.prototype.$config = configService;
 Vue.config.productionTip = false
 
 

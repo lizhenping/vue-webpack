@@ -53,7 +53,7 @@ export default {
    */
   data() {
     return {
-      titleName: "config配置文件",
+      titleName: this.$config.titleName,
       backgroundUrl:
         "url(" +
         require("../../static/img/user.png") +
