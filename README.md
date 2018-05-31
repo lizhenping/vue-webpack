@@ -1,5 +1,5 @@
 
-# vue-webpack-lizhenping
+# vue-webpack-pro
 
 > A Vue.js project
 
@@ -26,7 +26,7 @@ f.编写公共的storage.js,便于存储用户信息;进行全局config配置文
      后期考虑移动端页面的适配
 
 #### about author
-此为前端小白入门vue的集合版本项目,借鉴了很多前辈的经验，还存在很多不足的地方,欢迎及时指正.  
+这是前端小白入门vue的项目,借鉴了很多前辈的经验，还存在很多不足的地方,欢迎及时指正.  
 
 ## Build Setup
 
