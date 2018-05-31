@@ -26,6 +26,7 @@ Vue.config.productionTip = false
 
 /**
  * 安装px2rem: 将css中的px转rem->经测试,仍无法实现适配.
+ * 暂时还未完成vue-cli中集成muse-ui组件库,目前用的是element-ui组件库.
  */
 // import "lib-flexible"
 
