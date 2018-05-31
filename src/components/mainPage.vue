@@ -22,13 +22,13 @@
                                 <i class="el-icon-zoom-in"></i>
                                 <span>功能模块</span>
                             </template>
-                            <el-menu-item index="/func/element">element基础</el-menu-item>
-                            <el-menu-item index="/func/element_comp">element用法</el-menu-item>
                             <el-menu-item index="/func/shoppingCart">购物车</el-menu-item>
                             <el-menu-item index="/func/note">记事本</el-menu-item>
                             <el-menu-item index="/func/qrcode">二维码</el-menu-item>
                             <el-menu-item index='/func/echarts'>echarts图表</el-menu-item>
                             <el-menu-item index='/func/ueditor'>ueditor</el-menu-item>
+                            <el-menu-item index="/func/element">element基础</el-menu-item>
+                            <el-menu-item index="/func/element_comp">element用法</el-menu-item>
                         </el-submenu>
                    </el-menu>
                 </el-aside>
@@ -66,9 +66,6 @@ export default {
     markSureEvt() {
       this.logoutVisible = false;
       this.$storage.clearAll();
-      /**
-       * 若在这里还加了一层setTimeout,则会报错:Cannot read property 'push' of undefined
-       */
       this.$router.push({ path: "/login" });
     },
     showSetting() {

@@ -1,6 +1,5 @@
 <template>
   <div class="echart">
-    <div id="echart-column" style="width:600px; height:600px"></div>
     <div id="echart-bar" style="width:600px; height:600px"></div>
     <div id="echart-pie" style="width:600px; height:600px"></div>
     <div id="echart-line" style="width:600px; height:600px"></div>
@@ -12,7 +11,6 @@
 import echarts from "echarts";
 export default {
   mounted() {
-    this.getColumn();
     this.getPie();
     this.getBar();
     this.getLine();
@@ -176,6 +174,13 @@ export default {
       });
     },
     getPie() {
+      /**
+       * echarts使用技能分析:
+       * 1:npm install echarts 引入echarts;
+       * 2:echarts.init初始化echarts实例,setOption方法生成简单柱状图；
+       * 注意事项:一定要配置xAxis,yAxis,series这三个参数,不想设置的话初始化为空json即可,要不然会出项报错哦,同时确保echarts.init之前的对象是有宽高的;
+       * 明确每一个选项都必须是json对象格式
+       */
       var myChart = echarts.init(document.getElementById("echart-pie"));
       myChart.setOption({
         series: [
@@ -192,32 +197,6 @@ export default {
             ]
           }
         ]
-      });
-    },
-    getColumn() {
-      /**
-       * echarts使用技能分析:
-       * 1:npm install echarts 引入echarts;
-       * 2:echarts.init初始化echarts实例,setOptions方法生成简单柱状图；
-       * 注意事项:一定要配置xAxis,yAxis,series这三个参数,不想设置的话初始化为空json即可,要不然会出项报错哦,同时确保echarts.init之前的对象是有宽高的;
-       * 明确每一个选项都必须是json对象格式
-       */
-      var myChart = echarts.init(document.getElementById("echart-column"));
-      myChart.setOption({
-        title: { text: "测试成绩" },
-        xAxis: {
-          data: ["50分", "70分", "90分", "10分", "99分"]
-        },
-        legend: {
-          data: ["分数"]
-        },
-        tooltip: {},
-        yAxis: {},
-        series: {
-          name: "分数",
-          type: "bar",
-          data: [10, 20, 4, 4, 1]
-        }
       });
     }
   }
