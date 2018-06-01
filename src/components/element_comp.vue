@@ -2,10 +2,39 @@
     <div class="element_comp">
         <h5>中英文选词完成后,触发input事件.</h5>
         <input type="text" value="" placeholder="请输入用户名" id="username">
+        <hr/>
+        <!--
+          注意:nextTick()的使用:等全部数据渲染完之后,再执行回调.->优雅降序的方法.
+          在实际的开发过程中,需要根据你的需求再写代码,而勿先胡乱写代码,遇到问题再来分析整体需求是否有误;
+         -->
+        <el-tag v-for='item in tags' :key="item.name" closable :type="item.type"  @close='handleClose(item)'>{{item.name}}</el-tag>
+        <el-button @click="addTag()">addTags</el-button>
+
+        <el-progress status='success' :percentage='100'></el-progress>
+        <el-progress color='#cccccc' :percentage='60'></el-progress>
+        <el-progress color='#dddddd' :percentage='60' type='circle'></el-progress>
     </div>
 </template>
 <script>
 export default {
+  data() {
+    return {
+      tags: [
+        { name: "success", type: "success" },
+        { name: "info", type: "info" },
+        { name: "warning", type: "warning" },
+        { name: "danger", type: "danger" }
+      ]
+    };
+  },
+  methods: {
+    handleClose(item) {
+      this.tags.splice(this.tags.indexOf(item), 1);
+    },
+    addTag() {
+      //实现标签的追加
+    }
+  },
   created: function() {},
   mounted: function() {
     /**
