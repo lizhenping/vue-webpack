@@ -16,6 +16,11 @@
             <el-checkbox @change='depStatus' v-model="containsChilld" name='indeterminate'>是否包含子部门</el-checkbox>
         </div>
         <div class="itemBox">
+          <!-- 
+            v-model指令,实现表单输入和应用状态的双向数据绑定;
+            v-bind:绑定属性->简写: :key
+            v-on:绑定事件  ->简写: @click
+           -->
               <el-checkbox :indeterminate='isIndeterminate' v-model="checkAlled" @change='checkAll'>全选</el-checkbox>
                 <div style="margin:15px 0px"></div>
                 <el-checkbox-group v-model='checkedArr' @change="checkEvt">

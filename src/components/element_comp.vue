@@ -2,11 +2,7 @@
     <div class="element_comp">
         <h5>中英文选词完成后,触发input事件.</h5>
         <input type="text" value="" placeholder="请输入用户名" id="username">
-        <hr/>
-        <!--
-          注意:nextTick()的使用:等全部数据渲染完之后,再执行回调.->优雅降序的方法.
-          在实际的开发过程中,需要根据你的需求再写代码,而勿先胡乱写代码,遇到问题再来分析整体需求是否有误;
-         -->
+        
         <el-tag v-for='item in tags' :key="item.name" closable :type="item.type"  @close='handleClose(item)'>{{item.name}}</el-tag>
         <el-button @click="addTag()">addTags</el-button>
 
@@ -57,11 +53,37 @@ export default {
           console.log($(_this).val());
         }
       }, 0);
+
+      /**
+       * vue.js语法说明:
+       * 通过直接改变某一数组的下标值,亦或者修改数组长度的办法,并无法重新渲染页面;
+       * 需要通过splice,或者是set()方法[vue中将这些以观察函数包裹起来了]以达到目的;
+       * 在vue-cli框架中,下面setTimeout不会被执行.
+       * nextTick就是为了解决dom渲染的问题;
+       */
+      this.$nextTick(() => {
+        this.tags[2].name = "lzp";
+        this.tags.length = 10;
+        console.log(this.tags[2]);
+      });
+      // setTimeout(function() {
+      //   this.tags[2].name = "lzp";
+      //   this.tags.length = 10;
+      //   console.log(this.tags[2]);
+      // }, 2000);
     });
   }
 };
 </script>
 <style>
+.element_comp .el-tag {
+  margin-right: 15px;
+}
+.element_comp .el-progress {
+  width: 400px;
+  height: 20px;
+  padding-top: 5px;
+}
 </style>
 
 
