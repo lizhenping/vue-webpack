@@ -42,8 +42,11 @@
 
 
        <h4>jquery的几种事件绑定方法</h4>
-       <input type="button" value="按钮" class="btn-test" />
-       <div class="container">
+       <ul>
+         <li>bind()方法:jq1.7+已经废弃</li>
+         <li>live()方法,也已经废弃</li>
+         <li>delegate()方法,处理未渲染节点</li>
+       </ul>
        </div>
     </div>
 </template>
